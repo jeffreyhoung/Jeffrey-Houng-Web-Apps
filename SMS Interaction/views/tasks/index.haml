@@ -1,0 +1,10 @@
+- @tasks.each do |t|
+	%li 
+		= t.name
+		="(in #{t.list.name})"
+		
+		- if t.is_complete?
+			= "[X]"
+		- else
+			= "[]"
+	
