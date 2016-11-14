@@ -15,9 +15,9 @@ configure :development do
   Dotenv.load
 end
 
-
-require_relative './models/task'
 require_relative './models/list'
+require_relative './models/task'
+
 # require models 
 # require_relative './models/user'
 # require_relative './models/log'

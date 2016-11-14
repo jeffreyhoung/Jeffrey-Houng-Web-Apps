@@ -12,6 +12,6 @@ test:
 
 production:
   adapter: postgresql
-  database: ENV['HEROKU_POSTGRESQL_TEAL']
+  database: ENV['HEROKU_POSTGRESQL_TEAL_URL']
   pool: 5
   timeout: 5000
