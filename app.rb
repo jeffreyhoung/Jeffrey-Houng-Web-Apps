@@ -29,7 +29,7 @@ enable :sessions
 
 
 get '/' do
-  "my basic application".to_s
+  "my great application".to_s
 end
 
 error 401 do
