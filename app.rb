@@ -17,9 +17,9 @@ end
 
 
 # require models 
-require_relative './models/user'
-require_relative './models/log'
-require_relative './models/track'
+# require_relative './models/user'
+# require_relative './models/log'
+# require_relative './models/track'
 
 # enable sessions for this project
 
