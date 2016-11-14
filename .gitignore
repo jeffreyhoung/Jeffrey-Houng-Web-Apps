@@ -3,6 +3,8 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+/.bundle
+
 /tmp
 /log/*log
 
