@@ -18,8 +18,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+
 group :production do
-  gem 'pg'
+ gem 'pg', '~> 0.19.0'
 end
 
 # to avoid installing postgres use 
