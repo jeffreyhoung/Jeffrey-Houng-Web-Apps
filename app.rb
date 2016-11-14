@@ -32,6 +32,25 @@ get '/' do
   "my great application".to_s
 end
 
+
+get '/lists' do
+  List.all.to_json(include: :tasks)
+end
+ 
+get '/lists/:id' do
+  List.where(id: params['id']).first.to_json(include: :tasks)
+  
+  # my_list = List.where(id: params['id']).first
+  # my_list.tasks
+  #
+  # my_task = Task.where(id: params['id']).first
+  # my_task.list
+  
+  
+end
+
+
+
 error 401 do
   "not allowed!!!"
 end
