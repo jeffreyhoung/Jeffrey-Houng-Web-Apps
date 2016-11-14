@@ -16,6 +16,8 @@ configure :development do
 end
 
 
+require_relative './models/task'
+require_relative './models/list'
 # require models 
 # require_relative './models/user'
 # require_relative './models/log'

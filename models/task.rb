@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
   
-  belongs_to :list
+  belongs_to :lists
   
   validates_presence_of :name
   validates_presence_of :list_id
