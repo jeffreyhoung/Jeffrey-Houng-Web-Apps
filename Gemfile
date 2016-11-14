@@ -5,7 +5,6 @@ gem 'json'
 gem 'shotgun'
 gem 'activesupport'
 
-gem 'json'
 
 gem "rake"
 gem 'activerecord'
