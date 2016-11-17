@@ -7,9 +7,12 @@ require 'rake'
 
 require 'twilio-ruby'
 require 'stock_quote'
-require 'dotenv'
 
-Dotenv.load
+
+configure :development do
+  require 'dotenv'
+  Dotenv.load
+end
 
 #twilio credentials 
 account_sid = 'ACb4c91fec26a6011c46aa590ebaef47fb'
