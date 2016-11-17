@@ -94,9 +94,8 @@ get '/incoming_sms' do
   elsif body == "back" or body == "menu" or body == "home"
     message = get_commands
   
-  
   elsif body == "about" or body == "1"
-    message = "Jeff is a UX | Product Designer, maker, & tinkerer-fueled on curiosity and cortados. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences.\n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar.  \n \n Check out his portfolio! http://jeffreyhoung.com"
+    message = "Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences.\n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar.  \n \n Check out his portfolio! http://jeffreyhoung.com"
     
   elsif body == "work" or body == "2"
     message = "I was made by Daragh."
