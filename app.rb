@@ -67,6 +67,7 @@ end
 
   twilm = Twilio::TwiML::Response.new do |obj|
     # obj.Message "Thanks for the message! From #{sender} saying #{body}"
+    obj.Message message
   end
   
   session["counter"] += 1
