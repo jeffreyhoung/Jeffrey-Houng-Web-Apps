@@ -53,12 +53,25 @@ end
 
 get '/incoming_sms' do
   
+  sessions["counter"] ||= 0
+  sms_count = session["counter"]
+  
   sender = params[:From] || ""
   body = params[:Body] || ""
   
-  twilm = Twilio::TwiML::Response.new do |r|
-    r.Message "Thanks for the message! From #{sender} saying #{body}"
-end
+  if sms_count == 0
+    message = "Welcome! Thanks for the new message!"
+  else
+    message = "Hello! Thanks for the #{sms_count +1} message you've sent today!"
+end 
+
+  twilm = Twilio::TwiML::Response.new do |obj|
+    # obj.Message "Thanks for the message! From #{sender} saying #{body}"
+    obj.Message message
+  end
+  
+  session["counter"] += 1
+  
 twilm.text
 end
   
