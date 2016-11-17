@@ -89,7 +89,7 @@ get '/incoming_sms' do
   
   
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
-    message = get_about_message + "\n" + "Want to know a little bit more about me? \n" + get_commands
+    message = get_about_message + "\n" + "Want to know a little bit more about Jeff? \n" + get_commands
     
   elsif body == "back" or body == "menu" or body == "home"
     message = get_commands
@@ -112,7 +112,7 @@ get '/incoming_sms' do
   elsif body == "work experience" or body == "6"   
     message = "Microsoft: UX Design Intern - May to Aug 2016."
     
-  elsif body == "Let's talk" or body == "7"  or body =📞= "" 
+  elsif body == "Let's talk" or body == "7"  or body == "📞" or body == "lets talk" or body == "let's talk"  
     message = "For educational purposes."
   else 
     message = error_response
@@ -163,7 +163,7 @@ GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola"
 COMMANDS = "1) about," + "\n" + "2) resume," + "\n" + "3) work," + "\n" + "4) play," + "\n" + "5) beats," + "\n" + "6) work experience" + "\n" + "7) Let's talk! 📞 "
 
 def get_commands
-  error_prompt = ["You can say: \n", "Try asking:  \n", "Choose one: \n"].sample
+  error_prompt = ["You can say: \n", "Type one:  \n", "Choose one: \n", "Respond with: \n"].sample
 
   return error_prompt + COMMANDS
 end
@@ -173,7 +173,7 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting + ", I\'m JefferBot, Jeffrey Houng's personal MeBot! 🤖 Pleasure to have you here! " + "\n" + "\n" + "Jeff is a UX | Product Designer, maker, & tinkerer-fueled on curiosity and cortados. \n" # + get_commands
+  get_greeting + ", I\'m JefferBot, Jeffrey Houng's personal MeBot! 🤖 Pleasure to have you here! \n" # + get_commands
 end 
 
 def get_help_message
