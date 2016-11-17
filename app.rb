@@ -89,7 +89,7 @@ get '/incoming_sms' do
   
   
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
-    message = get_about_message + "Want to know a little bit more about me? Try typing:" + get_commands
+    message = get_about_message + "\n" + "Want to know a little bit more about me? Try typing:" + "\n" + get_commands
   elsif body == "about"
     message = get_about_message
   elsif body == "work"
@@ -148,7 +148,7 @@ private
 
 GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
-COMMANDS = "about," + "\n" + " work," + "\n" + " play," + "\n" + "beats," + "\n" + "and work experience."
+COMMANDS = "about," + "\n" + " work," + "\n" + " play," + "\n" + "beats," + "\n" + "work experience."
 
 def get_commands
   error_prompt = ["You can say:", "Try asking:", "Choose one:"].sample
@@ -161,7 +161,7 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting + ", I\'m Jeff! Pleasure to have you here! 😜 " + "\n" + "\n" + "I am a senior studying Product Design at Carnegie Mellon University in Pittsburgh, PA!" + "\n" + "It is my last year and it's about to get crazyyyyyy" # + get_commands
+  get_greeting + ", I\'m Jeff! Pleasure to have you here! 😜 " + "\n" + "\n" + "I am a senior studying Product Design at Carnegie Mellon University in Pittsburgh, PA!" + "\n" + "I\'m almost finished up " # + get_commands
 end 
 
 def get_help_message
