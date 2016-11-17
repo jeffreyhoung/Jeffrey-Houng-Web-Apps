@@ -53,8 +53,11 @@ end
 
 get '/incoming_sms' do
   
+  sender = params[:From] || ""
+  body = params[:Body] || ""
+  
   twilm = Twilio::TwiML::Response.new do |r|
-    r.Message "Thanks for the message!"
+    r.Message "Thanks for the message! From #{sender} saying #{body}"
 end
 twilm.text
 end
