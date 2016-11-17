@@ -90,22 +90,24 @@ get '/incoming_sms' do
   
   if body == "hi" or body == "hello" or body == "hey"
     message = get_about_message
-  elsif body == "work"
-    message = "hello yes ok"
   elsif body == "about"
+    message = get_about_message
+  elsif body == "work"
     message = "I was made by Daragh."
   elsif body == "play"
     message = "I don't do much but I do it well. You can ask me who what when where or why."
   elsif body == "beats"    
     message = Time.now.strftime( "It's %A %B %e, %Y")
   elsif body == "work experience"    
-    message = "I'm in Pittsburgh right now."
-  elsif body == "play"    
+    message = "Microsoft: UX Design Intern - May to Aug 2016."
+  elsif body == "inspiration"    
     message = "For educational purposes."
   else 
     message = error_response
     session["last_context"] = "error"
   end
+  
+  # COMMANDS = "about, work, play, beats, and work experience."
   
   twiml = Twilio::TwiML::Response.new do |r|
     r.Message message
