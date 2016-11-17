@@ -89,7 +89,7 @@ get '/incoming_sms' do
   
   
   if body == "hi" or body == "hello" or body == "hey"
-    message = get_about_message
+    message = get_about_message + "Want to know a little bit more about me? Try typing:" + COMMANDS
   elsif body == "about"
     message = get_about_message
   elsif body == "work"
@@ -151,7 +151,7 @@ GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola"
 COMMANDS = "about, work, play, beats, and work experience."
 
 def get_commands
-  error_prompt = ["I know how to: ", "You can say: ", "Try asking: "].sample
+  error_prompt = ["Sorry, I didn't get that! You can say: ", "Darn! Try asking: "].sample
   
   return error_prompt + COMMANDS
 end
