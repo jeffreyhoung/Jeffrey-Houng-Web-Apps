@@ -160,7 +160,7 @@ private
 
 GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
-COMMANDS = "1) about," + "\n" + "2) resume," + "\n" + "3) work," + "\n" + "4) play," + "\n" + "5) beats," + "\n" + "6) work experience" + "\n" + "7) Let's talk! 📞 "
+COMMANDS = "1) about", + "\n" + "2) resume", + "\n" + "3) work", + "\n" + "4) play", + "\n" + "5) beats", + "\n" + "6) work experience" + "\n" + "7) Let's talk! 📞 "
 
 def get_commands
   error_prompt = ["You can say: \n", "Type one:  \n", "Choose one: \n", "Respond with: \n"].sample
