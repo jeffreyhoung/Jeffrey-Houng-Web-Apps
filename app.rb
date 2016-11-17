@@ -29,7 +29,7 @@ enable :sessions
 
 
 get '/' do
-  "my great application".to_s
+  "my ultra great application".to_s
 end
 
 
