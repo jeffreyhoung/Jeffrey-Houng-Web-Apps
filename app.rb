@@ -90,17 +90,22 @@ get '/incoming_sms' do
   
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
     message = get_about_message + "\n" + "Want to know a little bit more about me?" + "\n" + get_commands
-  elsif body == "about"
+  elsif body == "about" or body == "1"
     message = get_about_message
-  elsif body == "work"
+    
+  elsif body == "work" or body == "2"
     message = "I was made by Daragh."
-  elsif body == "play"
+    
+  elsif body == "play" or body == "3"
     message = "I don't do much but I do it well. You can ask me who what when where or why."
-  elsif body == "beats"    
+    
+  elsif body == "beats" or body == "4"
     message = Time.now.strftime( "It's %A %B %e, %Y")
-  elsif body == "work experience"    
+    
+  elsif body == "work experience" or body == "5"   
     message = "Microsoft: UX Design Intern - May to Aug 2016."
-  elsif body == "inspiration"    
+    
+  elsif body == "Let's talk" or body == "6"  or body =📞= "" 
     message = "For educational purposes."
   else 
     message = error_response
@@ -148,7 +153,7 @@ private
 
 GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
-COMMANDS = "about," + "\n" + " work," + "\n" + " play," + "\n" + "beats," + "\n" + "work experience" + "\n" + "Let's talk! 📞 "
+COMMANDS = "1) about," + "\n" + "2) work," + "\n" + "3) play," + "\n" + "4) beats," + "\n" + "5) work experience" + "\n" + "6) Let's talk! 📞 "
 
 def get_commands
   error_prompt = ["You can say:", "Try asking:", "Choose one:"].sample
