@@ -11,6 +11,8 @@ gem 'sinatra-activerecord' # excellent gem that ports ActiveRecord for Sinatra
 gem 'json'
 gem 'haml'
 gem 'builder'
+gem 'twilio-ruby'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 
 group :development, :test do

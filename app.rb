@@ -7,6 +7,14 @@ require 'rake'
 
 require 'twilio-ruby'
 require 'stock_quote'
+require 'dotenv'
+
+Dotenv.load
+
+#twilio credentials 
+account_sid = 'ACb4c91fec26a6011c46aa590ebaef47fb'
+auth_token = '7c0cf5d30c155f21636de37de2037dbc'
+
 
 # Load environment variables using Dotenv. If a .env file exists, it will
 # set environment variables from that file (useful for dev environments)
