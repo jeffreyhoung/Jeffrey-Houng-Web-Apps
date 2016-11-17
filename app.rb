@@ -38,6 +38,7 @@ enable :sessions
 
 get '/' do
   "my ultra great application".to_s
+  ENV['TWILIO_NUMBER']
 end
 
 
