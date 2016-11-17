@@ -89,7 +89,7 @@ get '/incoming_sms' do
   
   
   if body == "hi" or body == "hello" or body == "hey"
-    message = get_about_message + "Want to know a little bit more about me? Try typing:" + COMMANDS
+    message = get_about_message + "Want to know a little bit more about me? Try typing:" + get_commands
   elsif body == "about"
     message = get_about_message
   elsif body == "work"
