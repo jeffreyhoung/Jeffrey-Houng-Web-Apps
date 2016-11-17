@@ -85,34 +85,22 @@ get '/incoming_sms' do
   body = params[:Body] || ""
   body = body.downcase.strip
   
+  # about, work, fun, beats, experience, and play."
+  
+  
   if body == "hi" or body == "hello" or body == "hey"
     message = get_about_message
-  elsif body == "play"
-    session["last_context"] = "play"
-    session["guess_it"] = rand(1...5)
-    message = "Guess what number I'm thinking of. It's between 1 and 5"
-  elsif session["last_context"] == "play"
-    
-    # if it's not a number 
-    if not body.to_i.to_s == body
-      message = "Cheater cheater that's not a number. Try again"
-    elsif body.to_i == session["guess_it"]
-      message = "Bingo! It was #{session["guess_it"]}"
-      session["last_context"] = "correct_answer"
-      session["guess_it"] = -1
-    else
-      message = "Wrong! Try again"
-    end
-    
-  elsif body == "who"
+  elsif body == "work"
+    message = "hello yes ok"
+  elsif body == "about"
     message = "I was made by Daragh."
-  elsif body == "what"
+  elsif body == "play"
     message = "I don't do much but I do it well. You can ask me who what when where or why."
-  elsif body == "when"    
+  elsif body == "beats"    
     message = Time.now.strftime( "It's %A %B %e, %Y")
-  elsif body == "where"    
+  elsif body == "work experience"    
     message = "I'm in Pittsburgh right now."
-  elsif body == "why"    
+  elsif body == "play"    
     message = "For educational purposes."
   else 
     message = error_response
@@ -156,9 +144,9 @@ end
 
 private 
 
-GREETINGS = ["Hi","Yo", "Hey","Howdy", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
+GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
-COMMANDS = "hi, who, what, where, when, why and play."
+COMMANDS = "about, work, play, beats, and work experience."
 
 def get_commands
   error_prompt = ["I know how to: ", "You can say: ", "Try asking: "].sample
@@ -171,7 +159,7 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting + ", I\'m Jeff! <br> I\'m a senior Design Major at Carnegie Mellon University! <br> I grew up in New Jersey. " + get_commands
+  get_greeting + ", I\'m Jeff! I\'m a senior Design Major at Carnegie Mellon University! I grew up in New Jersey. " + get_commands
 end
 
 def get_help_message
