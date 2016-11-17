@@ -88,7 +88,7 @@ get '/incoming_sms' do
   # about, work, fun, beats, experience, and play."
   
   
-  if body == "hi" or body == "hello" or body == "hey"
+  if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
     message = get_about_message + "Want to know a little bit more about me? Try typing:" + get_commands
   elsif body == "about"
     message = get_about_message
