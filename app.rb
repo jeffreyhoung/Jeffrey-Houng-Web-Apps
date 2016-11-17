@@ -146,12 +146,12 @@ end
 
 private 
 
-GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
+GREETINGS = "\n" + ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
-COMMANDS = "about," + "\n" + " work," "\n" + " play, beats, and work experience."
+COMMANDS = "about," + "\n" + " work," + "\n" + " play," + "\n" + "beats," + "\n" + "and work experience."
 
 def get_commands
-  error_prompt = ["Sorry, I didn't get that! You can say: ", "Darn! Try asking: "].sample
+  error_prompt = ["You can say:", "Try asking:", "Choose one:"].sample
 
   return error_prompt + COMMANDS
 end
@@ -161,7 +161,7 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting + ", I\'m Jeff! Pleasure to have you here!" + "\n" + "I am a senior studying Product Design at Carnegie Mellon University in Pittsburgh, PA!" + "\n" + "It is my last year and it's about to get crazyyyyyy" # + get_commands
+  get_greeting + ", I\'m Jeff! Pleasure to have you here! 😜 " + "\n" + "\n" + "I am a senior studying Product Design at Carnegie Mellon University in Pittsburgh, PA!" + "\n" + "It is my last year and it's about to get crazyyyyyy" # + get_commands
 end 
 
 def get_help_message
