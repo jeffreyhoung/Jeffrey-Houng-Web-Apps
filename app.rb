@@ -171,7 +171,7 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting + ", I\'m Jeff! </br> I\'m a senior Design Major at Carnegie Mellon University! </br> I grew up in New Jersey. " + get_commands
+  get_greeting + ", I\'m Jeff! <br> I\'m a senior Design Major at Carnegie Mellon University! <br> I grew up in New Jersey. " + get_commands
 end
 
 def get_help_message
