@@ -91,7 +91,7 @@ get '/incoming_sms' do
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
     message = get_about_message + "\n" + "Want to know a little bit more about me?" + "\n" + get_commands
   elsif body == "about" or body == "1"
-    message = get_about_message
+    message = get_about_message + "Check out his portfolio! http://jeffreyhoung.com"
     
   elsif body == "work" or body == "2"
     message = "I was made by Daragh."
