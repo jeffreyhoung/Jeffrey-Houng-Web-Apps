@@ -156,7 +156,7 @@ GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola"
 COMMANDS = "1) about," + "\n" + "2) work," + "\n" + "3) play," + "\n" + "4) beats," + "\n" + "5) work experience" + "\n" + "6) Let's talk! 📞 "
 
 def get_commands
-  error_prompt = ["You can say:", "Try asking:", "Choose one:"].sample
+  error_prompt = ["You can say: \n \n", "Try asking: \n \n", "Choose one: \n \n"].sample
 
   return error_prompt + COMMANDS
 end
