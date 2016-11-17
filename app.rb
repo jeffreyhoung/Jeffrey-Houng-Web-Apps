@@ -150,11 +150,11 @@ GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola"
 
 COMMANDS = "about," + "\n" + " work," "\n" + " play, beats, and work experience."
 
-# # def get_commands
-#   error_prompt = ["Sorry, I didn't get that! You can say: ", "Darn! Try asking: "].sample
-#
-#   return error_prompt + COMMANDS
-# end
+def get_commands
+  error_prompt = ["Sorry, I didn't get that! You can say: ", "Darn! Try asking: "].sample
+
+  return error_prompt + COMMANDS
+end
 
 def get_greeting
   return GREETINGS.sample
