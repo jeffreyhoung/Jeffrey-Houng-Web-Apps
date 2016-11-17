@@ -146,7 +146,7 @@ end
 
 private 
 
-GREETINGS = "\n" + ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
+GREETINGS = "\n" + ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"].to_s
 
 COMMANDS = "about," + "\n" + " work," + "\n" + " play," + "\n" + "beats," + "\n" + "and work experience."
 
