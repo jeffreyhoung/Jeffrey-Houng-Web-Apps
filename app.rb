@@ -41,15 +41,24 @@ get '/' do
 end
 
 
-
 get '/send_sms' do
   client.account.messages.create(
   :from => ENV["TWILIO_NUMBER"],
   :to => "+17324037420",
-  :body => "Hey Lyds! I just got my web app to work <3 love you This is a test"
+  :body => "Hey There! I just got my web app to work <3"
   )
   "Sent Message"
 end
+
+
+get '/incoming_sms' do
+  
+  twilm = Twilio::TwiML::Response.new do |r|
+    r.Message = "Thanks for the message!"
+end
+twilm.text
+end
+  
 
 
 
