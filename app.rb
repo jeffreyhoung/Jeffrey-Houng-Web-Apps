@@ -29,20 +29,33 @@ end
 require_relative './models/list'
 require_relative './models/task'
 
-# require models 
-# require_relative './models/user'
-# require_relative './models/log'
-# require_relative './models/track'
-
-# enable sessions for this project
-
 enable :sessions
+
+client = Twilio::REST::Client.new
+ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+
 
 
 get '/' do
   "my ultra great application".to_s
   ENV['TWILIO_NUMBER']
 end
+
+
+
+get '/send_sms' do
+  client.account.messages.create(
+  :from => ENV["TWILIO_NUMBER"]
+  :to => "8587500439"
+  :body => "Hey Lyds, This is a test from my web app <3"
+  
+  )
+  "Sent Message"
+end
+
+
+
+
 
 
 get '/lists' do
