@@ -119,12 +119,8 @@ get '/incoming_sms' do
     message = Time.now.strftime( "It's %A %B %e, %Y") + get_menu
   end
     
-  if body == "work experience" or body == "6"   
-    message = "Microsoft: UX Design Intern - May to Aug 2016." + get_menu
-  end
-    
-  if body == "Let's talk" or body == "7"  or body == "📞" or body == "lets talk" or body == "let's talk"  
-    message = "For educational purposes." + get_menu
+  if body == "Let's talk" or body == "6"  or body == "📞" or body == "lets talk" or body == "let's talk"  
+    message = relay_interest_from_number + get_menu
   end
   
   # else
@@ -173,7 +169,7 @@ private
 
 GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
-COMMANDS = "1) about" + "\n" + "2) resume" + "\n" + "3) work" + "\n" + "4) play" + "\n" + "5) beats" + "\n" + "6) work experience" + "\n" + "7) Let's talk! 📞 "
+COMMANDS = "1) about" + "\n" + "2) resume" + "\n" + "3) work" + "\n" + "4) play" + "\n" + "5) beats" + "\n" + "6) Let's talk! 📞 "
 
 def get_menu
   "\n \n Type 'menu' or 'back' at anytime to go back."
@@ -192,6 +188,13 @@ end
 def get_about_message
   get_greeting + ", I\'m JefferBot, Jeffrey Houng's personal MeBot! 🤖 Pleasure to have you here! \n" # + get_commands
 end 
+
+def relay_interest_from_number
+  client.account.messages.create(
+  :from => ENV["TWILIO_FROM"],
+  :to => "+17324037420",
+  :body => "Hi, someone wants to talk about your work. Give them a text at: #{[from_number]}")
+end
 
 def get_help_message
   "You're stuck, eh? " + get_commands
