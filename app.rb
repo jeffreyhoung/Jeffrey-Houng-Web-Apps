@@ -19,13 +19,6 @@ account_sid = 'ACb4c91fec26a6011c46aa590ebaef47fb'
 auth_token = '7c0cf5d30c155f21636de37de2037dbc'
 
 
-# Load environment variables using Dotenv. If a .env file exists, it will
-# set environment variables from that file (useful for dev environments)
-configure :development do
-  require 'dotenv'
-  Dotenv.load
-end
-
 require_relative './models/list'
 require_relative './models/task'
 
@@ -85,8 +78,6 @@ get '/incoming_sms' do
   body = params[:Body] || ""
   body = body.downcase.strip
   
-  # about, work, fun, beats, experience, and play."
-  
   
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
     message = get_about_message + "\n" + "Want to know a little bit more about Jeff? \n" + get_commands
@@ -94,31 +85,23 @@ get '/incoming_sms' do
   elsif body == "back" or body == "menu" or body == "home"
     message = get_commands
 
-  
   elsif body == "about" or body == "1"
     message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \n \n As a naturally curious individual, Jeff has explored many different interests that inform his thinking - resulting in envisioning future retail experiences with Microsoft and American Eagle, creating powerful data visualization experiences for SYMKALA, and designing prototypes for connected childrens' toys and sunglasses for local Pittsburgh startups. \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar.  \n \n Check out his portfolio! http://jeffreyhoung.com" + get_menu
-  
     
   elsif body == "resume" or body == "2"
    message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
- 
     
   elsif body == "work" or body == "3"
     message = "I was made by Daragh." + get_menu
-
-  
   
   elsif body == "play" or body == "4"
     message = "I don't do much but I do it well. You can ask me who what when where or why." + get_menu
  
-    
   elsif body == "beats" or body == "5"
     message = Time.now.strftime( "It's %A %B %e, %Y") + get_menu
 
-    
   elsif body == "Let's talk" or body == "6"  or body == "📞" or body == "lets talk" or body == "let's talk"  
     message = get_menu
-
   
   else
     message = error_response
@@ -198,5 +181,4 @@ def error_response
   error_prompt + " " + get_commands
 end
 
-end
 
