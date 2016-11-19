@@ -127,10 +127,10 @@ get '/incoming_sms' do
     message = "For educational purposes." + get_menu
   end
   
-  else 
-    message = error_response
-    session["last_context"] = "error"
-  end
+  # else
+#     message = error_response
+#     session["last_context"] = "error"
+#   end
   
   # COMMANDS = "about, work, play, beats, and work experience."
   
