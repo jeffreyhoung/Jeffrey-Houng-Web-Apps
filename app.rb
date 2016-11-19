@@ -98,7 +98,7 @@ get '/incoming_sms' do
     message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \n \n As a naturally curious individual, Jeff has explored many different interests that inform his thinking - resulting in envisioning future retail experiences with Microsoft and American Eagle, creating powerful data visualization experiences for SYMKALA, and designing prototypes for connected childrens' toys and sunglasses for local Pittsburgh startups. \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar.  \n \n Check out his portfolio! http://jeffreyhoung.com" + get_menu
     
   elsif body == "resume" or body == "2"
-    message = "Microsoft - UX Design Intern \n \n SYMKALA - Product Designer \n BikePGH/PositiveSpin \n \n Cycling Assistant Intern \n \n Transatlantic Climate Bridge - Visual Designer \n \n Look Eyewear - Industrial Design Contractor \n \n AE Dreams - Prototyping Contractor" + get_menu
+    message = "1)Microsoft - UX Design Intern \n \n 2)SYMKALA - Product Designer \n \n 3)BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4)Transatlantic Climate Bridge - Visual Designer \n \n 5)Look Eyewear - Industrial Design Contractor \n \n 6)AE Dreams - Prototyping Contractor" + get_menu
  
   elsif body == "work" or body == "3"
     message = "I was made by Daragh." + get_menu
