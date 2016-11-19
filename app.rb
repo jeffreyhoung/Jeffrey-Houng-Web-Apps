@@ -89,7 +89,7 @@ get '/incoming_sms' do
   
   
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
-    message = get_about_message + "\n" + "Want to know a little bit more about Jeff? \n" + get_commands + get menu
+    message = get_about_message + "\n" + "Want to know a little bit more about Jeff? \n" + get_commands
   end
     
   if body == "back" or body == "menu" or body == "home"
@@ -101,17 +101,10 @@ get '/incoming_sms' do
   end
     
   if body == "resume" or body == "2"
-   message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" 
- elsif session["last_context"] = "microsoft" or = "1"
-    message = "Microsoft UX Design Intern \n May-Aug 2016 \n Seattle, WA \n \n Designed and envisioned experiences that could help promote conversion into the Windows ecosystem. My main goal was to inform and engage Windows to consumers that are not familiar with the ecosystem. Additionally worked on feature work to be shipped in the next release."
-  elsif session["last_context"] = "symkala" or = "2"
-    message = "SYMKALA Product Designer \n May 2015-May 2016 \n Pittsburgh, PA"
-    
-  end
-    
-    
-    
-    
+   message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
+  #   sessions["last_context"] == "resume" or == "2"
+  #   message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
+  # end
     
   if body == "work" or body == "3"
     message = "I was made by Daragh." + get_menu
