@@ -198,4 +198,5 @@ def error_response
   error_prompt + " " + get_commands
 end
 
+end
 
