@@ -95,25 +95,25 @@ get '/incoming_sms' do
     message = get_commands
   
   elsif body == "about" or body == "1"
-    message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \n \n As a naturally curious individual, Jeff has explored many different interests that inform his thinking - resulting in envisioning future retail experiences with Microsoft and American Eagle, creating powerful data visualization experiences for SYMKALA, and designing prototypes for connected childrens' toys and sunglasses for local Pittsburgh startups. \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar.  \n \n Check out his portfolio! http://jeffreyhoung.com"
+    message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \n \n As a naturally curious individual, Jeff has explored many different interests that inform his thinking - resulting in envisioning future retail experiences with Microsoft and American Eagle, creating powerful data visualization experiences for SYMKALA, and designing prototypes for connected childrens' toys and sunglasses for local Pittsburgh startups. \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar.  \n \n Check out his portfolio! http://jeffreyhoung.com" + get_menu
     
   elsif body == "resume" or body == "2"
-    message = "resume"
+    message = "Microsoft - UX Design Intern \n \n SYMKALA - Product Designer \n BikePGH/PositiveSpin \n \n Cycling Assistant Intern \n \n Transatlantic Climate Bridge - Visual Designer \n \n Look Eyewear - Industrial Design Contractor \n \n AE Dreams - Prototyping Contractor" + get_menu
  
   elsif body == "work" or body == "3"
-    message = "I was made by Daragh."
+    message = "I was made by Daragh." + get_menu
     
   elsif body == "play" or body == "4"
-    message = "I don't do much but I do it well. You can ask me who what when where or why."
+    message = "I don't do much but I do it well. You can ask me who what when where or why." + get_menu
     
   elsif body == "beats" or body == "5"
-    message = Time.now.strftime( "It's %A %B %e, %Y")
+    message = Time.now.strftime( "It's %A %B %e, %Y") + get_menu
     
   elsif body == "work experience" or body == "6"   
-    message = "Microsoft: UX Design Intern - May to Aug 2016."
+    message = "Microsoft: UX Design Intern - May to Aug 2016." + get_menu
     
   elsif body == "Let's talk" or body == "7"  or body == "📞" or body == "lets talk" or body == "let's talk"  
-    message = "For educational purposes."
+    message = "For educational purposes." + get_menu
   else 
     message = error_response
     session["last_context"] = "error"
@@ -161,6 +161,10 @@ private
 GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
 COMMANDS = "1) about" + "\n" + "2) resume" + "\n" + "3) work" + "\n" + "4) play" + "\n" + "5) beats" + "\n" + "6) work experience" + "\n" + "7) Let's talk! 📞 "
+
+def get_menu
+  "Type 'menu' or 'back' at anytime to go back."
+end
 
 def get_commands
   error_prompt = ["You can say: \n", "Type one:  \n", "Choose one: \n", "Respond with: \n"].sample
