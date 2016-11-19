@@ -90,30 +90,43 @@ get '/incoming_sms' do
   
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
     message = get_about_message + "\n" + "Want to know a little bit more about Jeff? \n" + get_commands
+  end
     
-  elsif body == "back" or body == "menu" or body == "home"
+  if body == "back" or body == "menu" or body == "home"
     message = get_commands
+  end
   
-  elsif body == "about" or body == "1"
+  if body == "about" or body == "1"
     message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \n \n As a naturally curious individual, Jeff has explored many different interests that inform his thinking - resulting in envisioning future retail experiences with Microsoft and American Eagle, creating powerful data visualization experiences for SYMKALA, and designing prototypes for connected childrens' toys and sunglasses for local Pittsburgh startups. \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar.  \n \n Check out his portfolio! http://jeffreyhoung.com" + get_menu
+  end
     
-  elsif body == "resume" or body == "2"
+  if body == "resume" or body == "2"
     message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
- 
-  elsif body == "work" or body == "3"
+    sessions["last_context"] == "resume" or == "2"
+    message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
+  end
+    
+  if body == "work" or body == "3"
     message = "I was made by Daragh." + get_menu
-    
-  elsif body == "play" or body == "4"
+  end
+  
+  
+  if body == "play" or body == "4"
     message = "I don't do much but I do it well. You can ask me who what when where or why." + get_menu
+  end 
     
-  elsif body == "beats" or body == "5"
+  if body == "beats" or body == "5"
     message = Time.now.strftime( "It's %A %B %e, %Y") + get_menu
+  end
     
-  elsif body == "work experience" or body == "6"   
+  if body == "work experience" or body == "6"   
     message = "Microsoft: UX Design Intern - May to Aug 2016." + get_menu
+  end
     
-  elsif body == "Let's talk" or body == "7"  or body == "📞" or body == "lets talk" or body == "let's talk"  
+  if body == "Let's talk" or body == "7"  or body == "📞" or body == "lets talk" or body == "let's talk"  
     message = "For educational purposes." + get_menu
+  end
+  
   else 
     message = error_response
     session["last_context"] = "error"
