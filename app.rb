@@ -102,9 +102,7 @@ get '/incoming_sms' do
     
   if body == "resume" or body == "2"
    message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
-  #   sessions["last_context"] == "resume" or == "2"
-  #   message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
-  # end
+ 
     
   if body == "work" or body == "3"
     message = "I was made by Daragh." + get_menu
@@ -120,7 +118,7 @@ get '/incoming_sms' do
   end
     
   if body == "Let's talk" or body == "6"  or body == "📞" or body == "lets talk" or body == "let's talk"  
-    message = relay_interest_from_number + get_menu
+    message = get_menu
   end
   
   # else
@@ -189,12 +187,7 @@ def get_about_message
   get_greeting + ", I\'m JefferBot, Jeffrey Houng's personal MeBot! 🤖 Pleasure to have you here! \n" # + get_commands
 end 
 
-def relay_interest_from_number
-  client.account.messages.create(
-  :from => ENV["TWILIO_FROM"],
-  :to => "+17324037420",
-  :body => "Hi, someone wants to talk about your work. Give them a text at: #{[from_number]}")
-end
+
 
 def get_help_message
   "You're stuck, eh? " + get_commands
