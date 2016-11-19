@@ -89,7 +89,7 @@ get '/incoming_sms' do
   
   
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
-    message = get_about_message + "\n" + "Want to know a little bit more about Jeff? \n" + get_commands
+    message = get_about_message + "\n" + "Want to know a little bit more about Jeff? \n" + get_commands + get menu
   end
     
   if body == "back" or body == "menu" or body == "home"
@@ -100,11 +100,18 @@ get '/incoming_sms' do
     message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \n \n As a naturally curious individual, Jeff has explored many different interests that inform his thinking - resulting in envisioning future retail experiences with Microsoft and American Eagle, creating powerful data visualization experiences for SYMKALA, and designing prototypes for connected childrens' toys and sunglasses for local Pittsburgh startups. \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar.  \n \n Check out his portfolio! http://jeffreyhoung.com" + get_menu
   end
     
-  # if body == "resume" or body == "2"
-  #   message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
-  #   sessions["last_context"] == "resume" or == "2"
-  #   message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
-  # end
+  if body == "resume" or body == "2"
+   message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" 
+ elsif session["last_context"] == "microsoft" or == "1"
+    message = "Microsoft UX Design Intern \n May-Aug 2016 \n Seattle, WA \n \n Designed and envisioned experiences that could help promote conversion into the Windows ecosystem. My main goal was to inform and engage Windows to consumers that are not familiar with the ecosystem. Additionally worked on feature work to be shipped in the next release."
+  elsif session["last_context"] == "symkala" or == "2"
+    message = "SYMKALA Product Designer \n May 2015-May 2016 \n Pittsburgh, PA"
+    
+  end
+    
+    
+    
+    
     
   if body == "work" or body == "3"
     message = "I was made by Daragh." + get_menu
