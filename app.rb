@@ -65,14 +65,14 @@ get '/incoming_sms' do
       message = "1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
  
     elsif body == "work" or body == "3"
-      pic = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAaDAAAAJDY4ZDI5NWMzLTM1MGQtNDc0NC05Mzk2LWIwZDYxYzQ3ZmYzNA.jpg"
+      # pic = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAaDAAAAJDY4ZDI5NWMzLTM1MGQtNDc0NC05Mzk2LWIwZDYxYzQ3ZmYzNA.jpg"
       message = "View Jeff's work on his portfolio at http://jeffreyhoung.com"  + get_menu
   
-        twiml = Twilio::TwiML::Response.new.do |r|
-          r. Message do |m|
-              m.Body message
-              m.Media pic
-      
+        # twiml = Twilio::TwiML::Response.new.do |r|
+  #         r. Message do |m|
+  #             m.Body message
+  #             m.Media pic
+  #
     
     elsif body == "play" or body == "4"
         message = "I don't do much but I do it well. You can ask me who what when where or why." + get_menu
@@ -90,14 +90,12 @@ get '/incoming_sms' do
       session["last_context"] = "error"
   end
   
-  # COMMANDS = "about, work, play, beats, and work experience."
-  
   twiml = Twilio::TwiML::Response.new do |r|
     r.Message message
   end
   twiml.text
 end
-end
+
 
 
 
