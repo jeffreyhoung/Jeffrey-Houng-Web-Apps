@@ -74,7 +74,7 @@ get '/incoming_sms' do
   #             m.Media pic
   #
     
-    elsif body == "random facts" or body == "4" or == "random"
+    elsif body == "random facts" or body == "4" or body == "random"
         message = "Jeff loves sushi!" + get_menu
     
     elsif body == "beats" or body == "5"
