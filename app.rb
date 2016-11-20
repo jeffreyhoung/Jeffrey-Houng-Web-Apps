@@ -75,7 +75,7 @@ get '/incoming_sms' do
   #
     
     elsif body == "random facts" or body == "4" or body == "random"
-        message = "Random Fact:" + ["Jeff loves sushi! "] + get_menu
+        message = "Random Fact:" + ["Jeff loves sushi soooo much!", "Jeff is part Japanese 🇯🇵, part Taiwanese 🇹🇼, and part Dutch, 🇳🇱", "Jeff was born in Eatontown, NJ", "Jeff can't take eat too many sweets...unless they are pastries! 🍩"].sample + get_menu
     
     elsif body == "beats" or body == "5"
       message = Time.now.strftime( "It's %A %B %e, %Y") + "currently listening to Chill Tracks Playlist: \n https://open.spotify.com/user/spotify/playlist/6VXeTHZPxzx3SGJvHJj80n" + get_menu
