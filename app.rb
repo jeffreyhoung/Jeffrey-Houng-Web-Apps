@@ -148,10 +148,11 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting
+  get_greeting + 
    message = "Hello! How are you?"
    message = "Nutribility at your service!" 
    "I\'m NutriBot! What's your name? 
+   end
 end 
 
 def get_help_message
