@@ -27,6 +27,8 @@ enable :sessions
 client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
 
 
+
+
 get '/' do
   "my ultra great application".to_s
   ENV['TWILIO_NUMBER']
@@ -146,7 +148,7 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting + ", I\'m JefferBot, Jeffrey Houng's personal MeBot! 🤖 Pleasure to have you here! \n" # + get_commands
+  get_greeting + ", Hello! How are you?" + "Nutribility at your service!" + "I\'m JefferBot, Jeffrey Houng's personal MeBot! 🤖 Pleasure to have you here! \n" # + get_commands
 end 
 
 def get_help_message
