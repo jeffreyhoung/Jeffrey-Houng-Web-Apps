@@ -148,7 +148,10 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting + ", Hello! How are you?" + "Nutribility at your service!" + "I\'m JefferBot, Jeffrey Houng's personal MeBot! 🤖 Pleasure to have you here! \n" # + get_commands
+  get_greeting
+   message = "Hello! How are you?"
+   message = "Nutribility at your service!" 
+   "I\'m NutriBot! What's your name? 
 end 
 
 def get_help_message
