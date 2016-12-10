@@ -155,10 +155,10 @@ def get_about_message
 end 
 
 def get_help_message
-  "You're stuck, eh? " + get_commands
+   "You're stuck, eh?".to_s + get_commands
 end
 
 def error_response
-  error_prompt = ["I didn't catch that.", "Hmmm I don't know that word.", "What did you say to me? "].sample
+  error_prompt = ["I didn't catch that.".to_s , "Hmmm I don't know that word.".to_s , "What did you say to me? "].sample
   error_prompt + " " + get_commands
 end
