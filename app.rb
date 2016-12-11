@@ -148,18 +148,17 @@ def get_greeting
 end
 
 def get_about_message
-  get_greeting + 
+  get_greeting
    message = "Hello! How are you?"
    message = "Nutribility at your service!" 
-   "I\'m NutriBot! What's your name? 
-   end
+   "I\'m NutriBot!, What's your name? \n" # + get_commands
 end 
 
 def get_help_message
-   "You're stuck, eh?".to_s + get_commands
+  "You're stuck, eh? " + get_commands
 end
 
 def error_response
-  error_prompt = ["I didn't catch that.".to_s , "Hmmm I don't know that word.".to_s , "What did you say to me? "].sample
+  error_prompt = ["I didn't catch that.", "Hmmm I don't know that word.", "What did you say to me? "].sample
   error_prompt + " " + get_commands
 end
