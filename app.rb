@@ -58,8 +58,11 @@ get '/incoming_sms' do
     message = get_about_message 
     
   elsif session["last_context"] = get_about_message
-      message = "Thanks. Just to check, you agree to the terms and conditions and will be ok to get one SMS notification daily?"
+    session["last_context"] = "name"
+      message = "Thanks Jeff! I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier!"
 
+    elsif session["last_context"] = "name"
+      message = "Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
   
     elsif body == "about" or body == "1"
       message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados ☕️. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. A lot of motivation from his design comes from the future he wantst to help build from his wife and son. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \ \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar." + get_menu
