@@ -57,7 +57,7 @@ get '/incoming_sms' do
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
     message = get_about_message 
     
-    elsif 
+  elsif session["last_context"] == "hi"
       twiml = Twilio::TwiML::Response.new do |r|
         r.Message "Thanks #{user.first_name}. Just to check, you agree to the terms and conditions and will be ok to get one SMS notification daily?"
       end
