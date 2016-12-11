@@ -58,8 +58,7 @@ get '/incoming_sms' do
     message = get_about_message 
     
   elsif session["last_context"] = get_about_message
-    session["last_context"] == "name"
-      message = "Thanks Jeff! I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier! \n \n Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
+      message = get_registration
   
     elsif body == "about" or body == "1"
       message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados ☕️. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. A lot of motivation from his design comes from the future he wantst to help build from his wife and son. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \ \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar." + get_menu
@@ -133,6 +132,10 @@ private
 GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
 COMMANDS = "1) about" + "\n" + "2) resume" + "\n" + "3) work" + "\n" + "4) random facts" + "\n" + "5) beats" + "\n" +  "6) Let's talk! 📞 "
+
+def get_restrictions
+  message = "Thanks Jeff! \n \n I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier! \n \n Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
+end 
 
 def get_menu
   "\n \n Type 'menu' or 'back' at anytime to go back."
