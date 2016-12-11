@@ -149,6 +149,7 @@ def get_greeting
 end
 
 def get_about_message
+  session["last_context"] = "get_about_message"
   get_greeting
    message = "Hello! How are you?"
    message = "Nutribility at your service!" 
