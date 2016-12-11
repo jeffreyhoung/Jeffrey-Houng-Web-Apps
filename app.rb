@@ -58,7 +58,7 @@ get '/incoming_sms' do
     message = get_about_message 
     
   elsif session["last_context"] = get_about_message
-      message = "Thanks #{user.first_name}. Just to check, you agree to the terms and conditions and will be ok to get one SMS notification daily?"
+      message = "Thanks. Just to check, you agree to the terms and conditions and will be ok to get one SMS notification daily?"
 
   
     elsif body == "about" or body == "1"
