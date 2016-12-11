@@ -55,10 +55,13 @@ get '/incoming_sms' do
   
   
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
-    message = get_about_message + "\n" + "Want to know a little bit more about Jeff? \n" + get_commands
+    message = get_about_message 
     
-    elsif body == "back" or body == "menu" or body == "home"
-      message = get_commands
+    elsif 
+      twiml = Twilio::TwiML::Response.new do |r|
+        r.Message "Thanks #{user.first_name}. Just to check, you agree to the terms and conditions and will be ok to get one SMS notification daily?"
+      end
+      twiml.text
   
     elsif body == "about" or body == "1"
       message = "🤓 Jeff is a UX & Product Designer, maker, & tinkerer-fueled on curiosity and cortados ☕️. Jeff believes in exposing creativity, magic, and empowerment through the intersection of physical and digital experiences. A lot of motivation from his design comes from the future he wantst to help build from his wife and son. \n \n He\'s currently finishing up his senior year, studying Product Design at Carnegie Mellon University! \ \n \n Jeff is originally from New Jersey, but now calls Pittsburgh home with his wife -  Lydia, and son - Nathan! \n \n Jeff is almost finished up with school, so a full-time job is on his radar." + get_menu
