@@ -60,7 +60,7 @@ get '/incoming_sms' do
   elsif session["last_context"] = get_about_message
       message = get_name
 
-    elsif session["last_context"] = get_name 
+    elsif session["last_context"] = get_name and body.include? "high blood pressure" and "high cholesterol"
       message = get_restrictions
       
     elsif body == "resume" or body == "2"
@@ -134,10 +134,13 @@ GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola"
 COMMANDS = "1) about" + "\n" + "2) resume" + "\n" + "3) work" + "\n" + "4) random facts" + "\n" + "5) beats" + "\n" +  "6) Let's talk! 📞 "
 
 def get_name
-  message = "Thanks Jeff! \n \n I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier! \n \n Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
+  session["last_context"] = "get_name"
+  message = "Thanks Jeff! \n \n I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier!"
+  message = "Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
 end 
 
 def get_restrictions
+  session["last_context"] = "get_restrictions"
   message = "That\'s good to know! I'll keep in mind that you have" + "HIGH CHOLESTROL".upcase + "and" + "high blood pressure".upcase + "when thing of recipes for you! You won\'t have to worry whether you can eat something or not with me! Let\'s get started!"
 end
 
