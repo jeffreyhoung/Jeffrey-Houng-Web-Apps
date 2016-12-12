@@ -64,7 +64,10 @@ get '/incoming_sms' do
       message = get_restrictions
       
     elsif body == "ok" or body == "alright" or body == "sure" 
-      message = "Here's a recipe that I think would be great for you! Remember, I'm looking out for your high cholesterol/high blood pressure needs!"
+      message = "Here's a recipe that I think would be great for you! Remember, I'm looking out for your HIGH BLOOD PRESSURE needs!"
+      message = "Japanese Chicken-Scallion Rice Bowl: 20 Minutes \n \n An aromatic, protein rich brother served over rice."
+      message = get_commands
+      
       
     elsif body == "work" or body == "3"
       # pic = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAaDAAAAJDY4ZDI5NWMzLTM1MGQtNDc0NC05Mzk2LWIwZDYxYzQ3ZmYzNA.jpg"
@@ -131,8 +134,7 @@ private
 
 GREETINGS = ["Hey","Yo", "Sup","Hi", "Hello", "Ahoy", "‘Ello", "Aloha", "Hola", "Bonjour", "Hallo", "Ciao", "Konnichiwa"]
 
-COMMANDS = "1) about" + "\n" + "2) resume" + "\n" + "3) work" + "\n" + "4) random facts" + "\n" + "5) beats" + "\n" +  "6) Let's talk! 📞 "
-
+COMMANDS = "1) Let's try this recipe!" + "\n" + "2) Next, please." + "\n" + "3) Save this recipe for later!" 
 def get_name
   session["last_context"] = "get_name"
   message = "Thanks Jeff! \n \n I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier! \n \n Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
