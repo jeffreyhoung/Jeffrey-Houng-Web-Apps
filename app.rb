@@ -60,7 +60,7 @@ get '/incoming_sms' do
   elsif body == "Jeff" or body == "jeff"
       message = get_name
 
-    elsif body == "high blood pressure" or body == "high cholesterol" or body == "I have high blood pressure and high cholesterol"
+    elsif body == "high blood pressure" or body == "high cholesterol" or body == "I have high blood pressure and high cholesterol" or body == "high blood pressure and high cholesterol"
       message = get_restrictions
       
     elsif body == "ok" or body == "alright" or body == "sure" 
@@ -140,7 +140,7 @@ def get_name
 end 
 
 def get_restrictions
-  message = "That\'s good to know! I'll keep in mind that you have" + " HIGH CHOLESTROL".upcase + "and" + " high blood pressure".upcase + "when thinking of recipes for you! You won\'t have to worry whether you can eat something or not with me! Let\'s get started!"
+  message = "That\'s good to know! I'll keep in mind that you have" + " high blood pressure".upcase + "when thinking of recipes for you! You won\'t have to worry whether you can eat something or not with me! Let\'s get started!"
 end
 
 def get_menu
