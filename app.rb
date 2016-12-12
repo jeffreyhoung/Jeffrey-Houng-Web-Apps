@@ -60,7 +60,7 @@ get '/incoming_sms' do
   elsif session["last_context"] = get_about_message
       message = get_name
 
-    elsif session["last_context"] = get_name and body.include? "high blood pressure" and "high cholesterol"
+    elsif session["last_context"] = get_name 
       message = get_restrictions
       
     elsif body == "resume" or body == "2"
@@ -135,8 +135,8 @@ COMMANDS = "1) about" + "\n" + "2) resume" + "\n" + "3) work" + "\n" + "4) rando
 
 def get_name
   session["last_context"] = "get_name"
-  message = "Thanks Jeff! \n \n I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier!"
-  message = "Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
+  message = "Thanks Jeff! \n \n I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier!" + \n \n + message = "Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
+
 end 
 
 def get_restrictions
