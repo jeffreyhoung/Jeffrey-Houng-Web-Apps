@@ -63,9 +63,9 @@ get '/incoming_sms' do
     elsif body == "high blood pressure" or body == "high cholesterol" or body == "I have high blood pressure and high cholesterol"
       message = get_restrictions
       
-    elsif body == "resume" or body == "2"
-      message = "As a naturally curious individual, Jeff has explored many different interests that inform his thinking - resulting in envisioning future retail experiences with Microsoft and American Eagle, creating powerful data visualization experiences for SYMKALA, and designing prototypes for connected childrens' toys and sunglasses for local Pittsburgh startups. \n \n 1) Microsoft - UX Design Intern \n \n 2) SYMKALA - Product Designer \n \n 3) BikePGH/PositiveSpin - Cycling Assistant Intern \n \n 4) Transatlantic Climate Bridge - Visual Designer \n \n 5) Look Eyewear - Industrial Design Contractor \n \n 6) AE Dreams - Prototyping Contractor" + " \n \n \n choose number to learn more about each" + get_menu
- 
+    elsif body == "ok" or body == "alright" or body == "sure" 
+      message = "Here's a recipe that I think would be great for you! Remember, I'm looking out for your high cholesterol/high blood pressure needs!"
+      
     elsif body == "work" or body == "3"
       # pic = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAaDAAAAJDY4ZDI5NWMzLTM1MGQtNDc0NC05Mzk2LWIwZDYxYzQ3ZmYzNA.jpg"
       message = "Jeff's Portfolio: http://jeffreyhoung.com \n LinkedIn Profile: http://linkedin.com/in/jeffreyhoung/ \n E-mail: jhoung@andrew.cmu.edu"  + get_menu
