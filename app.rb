@@ -57,10 +57,10 @@ get '/incoming_sms' do
   if body == "hi" or body == "hello" or body == "hey" or body == "yo" or body == "sup" or body == "What's up" or body == "heyo" or body == "hey!"or body == "hi!"
     message = get_about_message 
     
-  elsif session["last_context"] = get_about_message
+  elsif session["last_context"] = "get_about_message"
       message = get_name
 
-    elsif session["last_context"] = get_name 
+    elsif session["last_context"] = "get_name" 
       message = get_restrictions
       
     elsif body == "resume" or body == "2"
