@@ -69,8 +69,7 @@ get '/incoming_sms' do
       message = get_commands
       
       
-    elsif body == "work" or body == "3"
-      # pic = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAaDAAAAJDY4ZDI5NWMzLTM1MGQtNDc0NC05Mzk2LWIwZDYxYzQ3ZmYzNA.jpg"
+    elsif body == "1" or body == "Let's try it" or body == "Let's try this recipe!" or body == "let's do it" or body == "I like this one" or body == "this one is fine"
       message = "Jeff's Portfolio: http://jeffreyhoung.com \n LinkedIn Profile: http://linkedin.com/in/jeffreyhoung/ \n E-mail: jhoung@andrew.cmu.edu"  + get_menu
   
         # twiml = Twilio::TwiML::Response.new.do |r|
@@ -79,10 +78,10 @@ get '/incoming_sms' do
   #             m.Media pic
   #
     
-    elsif body == "random facts" or body == "4" or body == "random"
-        message = "Random Fact:" + ["Jeff loves sushi soooo much!", "Jeff is part Japanese 🇯🇵, part Taiwanese 🇹🇼, and part Dutch, 🇳🇱", "Jeff was born in Eatontown, NJ", "Jeff can't take eat too many sweets...unless they are pastries! 🍩"].sample + "type 'random' again to see another fact!" + get_menu
+    elsif body == "2" or body == "next, please" or body == "next" 
+        message = "Here's another one! Hope you enjoy it:" + ["Japanese Shrimp and Eggplant Fried Rice", "Black Bean Croquettes with Fresh Salsa", "Chicken, Mushroom & Wild Rice Casserole", "Banana-Cocoa Soy Smoothie"].sample + "type 'random' again to see another fact!" + get_commands
     
-    elsif body == "beats" or body == "5"
+    elsif body == "3" or body == "save it" or body == "save for later"
       message = Time.now.strftime( "It's %A %B %e, %Y") + "currently listening to Chill Tracks Playlist: \n https://open.spotify.com/user/spotify/playlist/6VXeTHZPxzx3SGJvHJj80n" + get_menu
     
     else 
@@ -142,7 +141,7 @@ def get_name
 end 
 
 def get_restrictions
-  message = "That\'s good to know! I'll keep in mind that you have" + " high blood pressure".upcase + " when thinking of recipes for you! You won\'t have to worry whether you can eat something or not with me! Let\'s get started!"
+  message = "That\'s good to know! I'll keep in mind that you have" + " high blood pressure".upcase + " when thinking of recipes for you! \n \n You won\'t have to worry whether you can eat something or not with me! \n \n Let\'s get started!"
 end
 
 def get_menu
