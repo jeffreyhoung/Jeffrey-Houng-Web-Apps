@@ -60,7 +60,7 @@ get '/incoming_sms' do
   elsif session["last_context"] = "get_about_message"
       message = get_name
 
-    elsif body = 'high blood pressure' or 'high cholesterol' 
+    elsif body == "high blood pressure" or body == "high cholesterol" or body == "I have high blood pressure and high cholesterol"
       message = get_restrictions
       
     elsif body == "resume" or body == "2"
