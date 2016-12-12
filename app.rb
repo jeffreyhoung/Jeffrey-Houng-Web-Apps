@@ -135,7 +135,7 @@ COMMANDS = "1) about" + "\n" + "2) resume" + "\n" + "3) work" + "\n" + "4) rando
 
 def get_name
   session["last_context"] = "get_name"
-  message = "Thanks Jeff! \n \n I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier!" + \n \n + "Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
+  message = "Thanks Jeff! \n \n I make cooking a little less stressful for people with special dietary needs or people who just want to eat healthier! \n \n Do you happen to have any special dietary restrictions that limit your diet? (e.g. high blood pressure, diabetes, current pregnancy, high cholestrol, etc)"
 
 end 
 
