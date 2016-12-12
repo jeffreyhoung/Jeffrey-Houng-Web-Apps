@@ -80,7 +80,7 @@ get '/incoming_sms' do
         message = "Here's another one! Hope you enjoy it: \n \n" + ["Japanese Shrimp and Eggplant Fried Rice", "Black Bean Croquettes with Fresh Salsa", "Chicken, Mushroom & Wild Rice Casserole", "Banana-Cocoa Soy Smoothie"].sample + "\n \n" + get_commands
     
     elsif body == "3" or body == "save it" or body == "save for later"
-      message = Time.now.strftime( "It's %A %B %e, %Y") + "currently listening to Chill Tracks Playlist: \n https://open.spotify.com/user/spotify/playlist/6VXeTHZPxzx3SGJvHJj80n" + get_menu
+      message = "This recipe was saved to your cookbook for future reference!"
     
     else 
       message = error_response
