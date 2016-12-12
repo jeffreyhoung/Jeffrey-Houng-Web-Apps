@@ -64,9 +64,7 @@ get '/incoming_sms' do
       message = get_restrictions
       
     elsif body == "ok" or body == "alright" or body == "sure" 
-      message = "Here's a recipe that I think would be great for you! Remember, I'm looking out for your HIGH BLOOD PRESSURE needs!"
-      message = "Japanese Chicken-Scallion Rice Bowl: 20 Minutes \n \n An aromatic, protein rich brother served over rice."
-      message = get_commands
+      message = "Here's a recipe that I think would be great for you! Remember, I'm looking out for your HIGH BLOOD PRESSURE needs! \n \n Japanese Chicken-Scallion Rice Bowl: 20 Minutes \n \n An aromatic, protein rich brother served over rice." + get_commands
       
       
     elsif body == "1" or body == "Let's try it" or body == "Let's try this recipe!" or body == "let's do it" or body == "I like this one" or body == "this one is fine"
