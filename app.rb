@@ -64,7 +64,7 @@ get '/incoming_sms' do
       message = get_restrictions
       
     elsif body == "ok" or body == "alright" or body == "sure" 
-      message = "Here's a recipe that I think would be great for you! Remember, I'm looking out for your HIGH BLOOD PRESSURE needs! \n \n Japanese Chicken-Scallion Rice Bowl: 20 Minutes \n \n An aromatic, protein rich brother served over rice." + get_commands
+      message = "Here's a recipe that I think would be great for you! Remember, I'm looking out for your HIGH BLOOD PRESSURE needs! \n \n Japanese Chicken-Scallion Rice Bowl: 20 Minutes \n \n An aromatic, protein rich brother served over rice. \n \n" + get_commands
       
       
     elsif body == "1" or body == "Let's try it" or body == "Let's try this recipe!" or body == "let's do it" or body == "I like this one" or body == "this one is fine"
@@ -77,7 +77,7 @@ get '/incoming_sms' do
   #
     
     elsif body == "2" or body == "next, please" or body == "next" 
-        message = "Here's another one! Hope you enjoy it:" + ["Japanese Shrimp and Eggplant Fried Rice", "Black Bean Croquettes with Fresh Salsa", "Chicken, Mushroom & Wild Rice Casserole", "Banana-Cocoa Soy Smoothie"].sample + "type 'random' again to see another fact!" + get_commands
+        message = "Here's another one! Hope you enjoy it: \n \n" + ["Japanese Shrimp and Eggplant Fried Rice", "Black Bean Croquettes with Fresh Salsa", "Chicken, Mushroom & Wild Rice Casserole", "Banana-Cocoa Soy Smoothie"].sample + "\n \n" + get_commands
     
     elsif body == "3" or body == "save it" or body == "save for later"
       message = Time.now.strftime( "It's %A %B %e, %Y") + "currently listening to Chill Tracks Playlist: \n https://open.spotify.com/user/spotify/playlist/6VXeTHZPxzx3SGJvHJj80n" + get_menu
