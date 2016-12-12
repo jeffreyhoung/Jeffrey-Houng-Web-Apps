@@ -140,7 +140,7 @@ def get_name
 end 
 
 def get_restrictions
-  message = "That\'s good to know! I'll keep in mind that you have" + " high blood pressure".upcase + "when thinking of recipes for you! You won\'t have to worry whether you can eat something or not with me! Let\'s get started!"
+  message = "That\'s good to know! I'll keep in mind that you have" + " high blood pressure".upcase + " when thinking of recipes for you! You won\'t have to worry whether you can eat something or not with me! Let\'s get started!"
 end
 
 def get_menu
@@ -170,5 +170,5 @@ end
 
 def error_response
   error_prompt = ["I didn't catch that.", "Hmmm I don't know that word.", "What did you say to me? "].sample
-  error_prompt + " " + get_commands
+  error_prompt 
 end
